@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "admin-midl": "apps/admin-midl",
+    "admin-midl-e2e": "apps/admin-midl-e2e"
+  }
+}
