@@ -1,0 +1,28 @@
+{
+  "root": "apps/staff-midl-e2e",
+  "sourceRoot": "apps/staff-midl-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/staff-midl-e2e/cypress.json",
+        "devServerTarget": "staff-midl:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "staff-midl:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/staff-midl-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["staff-midl"]
+}

@@ -2,6 +2,8 @@
   "version": 2,
   "projects": {
     "admin-midl": "apps/admin-midl",
-    "admin-midl-e2e": "apps/admin-midl-e2e"
+    "admin-midl-e2e": "apps/admin-midl-e2e",
+    "staff-midl": "apps/staff-midl",
+    "staff-midl-e2e": "apps/staff-midl-e2e"
   }
 }
