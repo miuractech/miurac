@@ -1,0 +1,45 @@
+{
+  "root": "libs/platformadmin/admin-auth",
+  "sourceRoot": "libs/platformadmin/admin-auth/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/platformadmin/admin-auth",
+        "tsConfig": "libs/platformadmin/admin-auth/tsconfig.lib.json",
+        "project": "libs/platformadmin/admin-auth/package.json",
+        "entryFile": "libs/platformadmin/admin-auth/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/platformadmin/admin-auth/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/platformadmin/admin-auth/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/platformadmin/admin-auth"],
+      "options": {
+        "jestConfig": "libs/platformadmin/admin-auth/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

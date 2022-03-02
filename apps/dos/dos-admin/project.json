@@ -1,0 +1,73 @@
+{
+  "root": "apps/dos/dos-admin",
+  "sourceRoot": "apps/dos/dos-admin/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/dos/dos-admin",
+        "index": "apps/dos/dos-admin/src/index.html",
+        "baseHref": "/",
+        "main": "apps/dos/dos-admin/src/main.tsx",
+        "polyfills": "apps/dos/dos-admin/src/polyfills.ts",
+        "tsConfig": "apps/dos/dos-admin/tsconfig.app.json",
+        "assets": [
+          "apps/dos/dos-admin/src/favicon.ico",
+          "apps/dos/dos-admin/src/assets"
+        ],
+        "styles": ["apps/dos/dos-admin/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/dos/dos-admin/src/environments/environment.ts",
+              "with": "apps/dos/dos-admin/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "dos-dos-admin:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "dos-dos-admin:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/dos/dos-admin/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/dos/dos-admin"],
+      "options": {
+        "jestConfig": "apps/dos/dos-admin/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["admin"]
+}

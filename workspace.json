@@ -1,9 +1,11 @@
 {
   "version": 2,
   "projects": {
-    "admin-midl": "apps/admin-midl",
-    "admin-midl-e2e": "apps/admin-midl-e2e",
-    "staff-midl": "apps/staff-midl",
-    "staff-midl-e2e": "apps/staff-midl-e2e"
+    "admin-dashboard": "apps/admin-dashboard",
+    "admin-dashboard-e2e": "apps/admin-dashboard-e2e",
+    "dos-dos-admin": "apps/dos/dos-admin",
+    "dos-dos-admin-e2e": "apps/dos/dos-admin-e2e",
+    "platformadmin-admin-auth": "libs/platformadmin/admin-auth",
+    "utils": "libs/utils"
   }
 }

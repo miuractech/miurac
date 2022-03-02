@@ -1,0 +1,28 @@
+{
+  "root": "apps/dos/dos-admin-e2e",
+  "sourceRoot": "apps/dos/dos-admin-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/dos/dos-admin-e2e/cypress.json",
+        "devServerTarget": "dos-dos-admin:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "dos-dos-admin:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/dos/dos-admin-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["dos-dos-admin"]
+}

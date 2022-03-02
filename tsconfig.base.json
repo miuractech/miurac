@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@miurac/admin-auth": ["libs/platformadmin/admin-auth/src/index.ts"],
+      "@miurac/utils": ["libs/utils/src/index.ts"],
+      "adminAuth": ["libs/admin-platform/admin-auth/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
